@@ -1,17 +1,27 @@
-import Link from "next/link";
+// ✅ 프로젝트의 초기 템플릿 세팅: Next.js + TailwindCSS 기반
+
+// 1. 홈(index) 페이지
+// pages/index.tsx
+import RoundedButton from "@/components/RoundedButton";
 
 export default function Home() {
   return (
-    <>
-      <h1 className="text-3xl font-bold mb-6">홈</h1>
-      <p className="mb-4">
-        이 플랫폼은 인공지능의 작동 원리와 계산 과정을 시각적으로 보여주는 인터랙티브 학습 도구입니다.
+    <main className="p-8 max-w-3xl mx-auto text-center">
+      <h1 className="text-4xl font-bold mb-4">🧠 AI 학습 플랫폼</h1>
+      <p className="mb-6 text-lg text-gray-700 dark:text-gray-300">
+        인공지능의 이론과 계산 과정을 시각적으로 탐색하고, 직접 실험할 수 있도록 설계된 플랫폼입니다.
       </p>
-      <ul className="list-disc pl-5 space-y-1 text-blue-600">
-        <li><Link href="/graph-visualizer">계산 그래프 시각화</Link></li>
-        <li><Link href="/activations">활성화 함수 시뮬레이터</Link></li>
-        <li><Link href="/theory/backprop">역전파 이론</Link></li>
-      </ul>
-    </>
+      <div className="grid gap-4">
+        <RoundedButton href="/theory" color="bg-yellow-100 text-yellow-800">
+          📚 머신러닝 이론 학습하기
+        </RoundedButton>
+        <RoundedButton href="/graph-visualizer" color="bg-blue-100 text-blue-800">
+          📊 계산 그래프 시각화
+        </RoundedButton>
+        <RoundedButton href="/activations" color="bg-green-100 text-green-800">
+          🌱 활성화 함수 작동 원리
+        </RoundedButton>
+      </div>
+    </main>
   );
 }

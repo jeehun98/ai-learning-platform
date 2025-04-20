@@ -1,6 +1,7 @@
 // components/Layout.tsx
 import Link from "next/link";
 import { ReactNode } from "react";
+import Navbar from "./Navbar"; // ✅ 이 줄 추가
 
 type LayoutProps = {
   children: ReactNode;
@@ -9,6 +10,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <Navbar /> {/*✅ 여기 삽입 */}
       <header className="px-8 py-4 shadow-sm border-b border-gray-300 dark:border-gray-700">
         <nav className="flex items-center justify-between max-w-5xl mx-auto">
           <Link href="/" className="text-2xl font-bold">
