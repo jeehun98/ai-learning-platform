@@ -1,62 +1,68 @@
-// components/TheorySidebar.tsx
 import Link from "next/link";
-import { useRouter } from "next/router";
 
-const theoryNav = [
+const sidebarItems = [
   {
-    number: "1",
-    title: "신경망",
-    href: "/theory/neural-networks",
+    title: "1. 개요",
+    href: "/theory/1_overview",
+  },
+  {
+    title: "2. 기본 개념",
     children: [
-      { number: "1.1", title: "역전파", href: "/theory/neural-networks/backprop" },
-      { number: "1.2", title: "활성화 함수", href: "/theory/neural-networks/activation" },
+      { title: "2.1 데이터와 특징", href: "/theory/2_fundamentals/data" },
+      { title: "2.2 모델과 학습", href: "/theory/2_fundamentals/model" },
+      { title: "2.3 평가", href: "/theory/2_fundamentals/evaluation" },
     ],
   },
   {
-    number: "2",
-    title: "최적화",
-    href: "/theory/optimization",
+    title: "3. 주요 알고리즘",
     children: [
-      { number: "2.1", title: "경사 하강법", href: "/theory/optimization/sgd" },
-      { number: "2.2", title: "Adam", href: "/theory/optimization/adam" },
+      { title: "3.1 선형 모델", href: "/theory/3_algorithms/linear" },
+      { title: "3.2 트리 기반 모델", href: "/theory/3_algorithms/tree" },
+      { title: "3.3 SVM", href: "/theory/3_algorithms/svm" },
+      { title: "3.4 신경망 기초", href: "/theory/3_algorithms/nn-basic" },
+      { title: "3.5 비지도 학습", href: "/theory/3_algorithms/unsupervised" },
     ],
+  },
+  {
+    title: "4. 신경망 이론",
+    children: [
+      { title: "4.1 구조", href: "/theory/4_neural/structure" },
+      { title: "4.2 순전파와 역전파", href: "/theory/4_neural/backprop" },
+      { title: "4.3 최적화", href: "/theory/4_neural/optimization" },
+      { title: "4.4 과적합 방지", href: "/theory/4_neural/regularization" },
+    ],
+  },
+  {
+    title: "5. 실전 팁",
+    href: "/theory/5_tips",
   },
 ];
 
 export default function TheorySidebar() {
-  const router = useRouter();
-
   return (
-    <aside className="w-64 min-h-screen p-6 border-r border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
-      <h2 className="text-xl font-bold mb-6 text-blue-600 dark:text-blue-400">📘 이론 목차</h2>
-      <ul className="space-y-3 text-sm">
-        {theoryNav.map((section) => (
-          <li key={section.href}>
-            <Link
-              href={section.href}
-              className={`block px-2 py-1 rounded-md font-semibold ${
-                router.pathname === section.href ? "bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-white" : "hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-800 dark:text-gray-200"
-              }`}
-            >
-              {section.number}. {section.title}
+    <aside className="w-64 p-4 border-r border-gray-200 dark:border-gray-700">
+      <nav className="space-y-2 text-sm">
+        {sidebarItems.map((item, i) => (
+          <div key={i}>
+            <Link href={item.href || "#"}>
+              <span className="block font-semibold text-gray-800 dark:text-gray-200 hover:underline">
+                {item.title}
+              </span>
             </Link>
-            <ul className="mt-1 space-y-1">
-              {section.children?.map((child) => (
-                <li key={child.href}>
-                  <Link
-                    href={child.href}
-                    className={`block pl-6 text-sm rounded-md ${
-                      router.pathname === child.href ? "bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-white font-medium" : "hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-300"
-                    }`}
-                  >
-                    {child.number} {child.title}
+            {item.children && (
+              <div className="ml-4 mt-1 space-y-1">
+                {item.children.map((sub, j) => (
+                  <Link href={sub.href} key={j}>
+                    <span className="block text-gray-600 dark:text-gray-400 hover:underline">
+                      {sub.title}
+                    </span>
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </li>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
-      </ul>
+      </nav>
     </aside>
   );
 }
