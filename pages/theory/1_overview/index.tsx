@@ -13,20 +13,16 @@ export default function OverviewPage() {
           📘 1. 패턴 인식 개요
         </h1>
 
-        <div className="space-y-10 text-gray-800 dark:text-gray-200 leading-relaxed">
+        <section className="prose prose-lg dark:prose-invert max-w-3xl mx-auto">
           {overviewContent.map((section, idx) => (
-            <section key={idx} id={`section-${idx}`}>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4 border-b pb-2">
-                {section.title}
-              </h2>
+            <div key={idx} id={`section-${idx}`}>
+              <h2>{section.title}</h2>
               {section.body.map((para, pIdx) => (
-                <p key={pIdx} className="mb-4">
-                  {para}
-                </p>
+                <p key={pIdx}>{para}</p>
               ))}
-            </section>
+            </div>
           ))}
-        </div>
+        </section>
       </TheoryLayout>
     </>
   );

@@ -44,3 +44,12 @@ a {
     color-scheme: dark;
   }
 }
+/* KaTeX 수식 여백 및 정렬 */
+.katex-display {
+  margin: 2rem 0;
+  text-align: center;
+}
+/* globals.css */
+body {
+  font-family: 'Pretendard', sans-serif;
+}
