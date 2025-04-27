@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { Children } from "react";
 
 const sidebarItems = [
   {
     title: "1. 개요",
-    href: "/theory/1_overview",
+    children: [
+      { title : "1. 소개", href: "/theory/1_overview" },
+      { title : "1.1 다항식 곡선 피팅", href: "/theory/1_overview/PolynomialCurveFitting" },
+    ],
   },
   {
     title: "2. 기본 개념",
@@ -40,29 +44,31 @@ const sidebarItems = [
 
 export default function TheorySidebar() {
   return (
-    <aside className="w-64 p-4 border-r border-gray-200 dark:border-gray-700">
-      <nav className="space-y-2 text-sm">
-        {sidebarItems.map((item, i) => (
-          <div key={i}>
-            <Link href={item.href || "#"}>
-              <span className="block font-semibold text-gray-800 dark:text-gray-200 hover:underline">
-                {item.title}
-              </span>
-            </Link>
-            {item.children && (
-              <div className="ml-4 mt-1 space-y-1">
-                {item.children.map((sub, j) => (
-                  <Link href={sub.href} key={j}>
-                    <span className="block text-gray-600 dark:text-gray-400 hover:underline">
-                      {sub.title}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            )}
+<aside className="w-56 md:w-64 p-4 border-r border-gray-200 dark:border-gray-700">
+  <nav className="space-y-2 text-sm">
+    {sidebarItems.map((item, i) => (
+      <div key={i}>
+        <Link href={item.href || "#"}>
+          <span className="block font-semibold text-gray-800 dark:text-gray-200 hover:underline">
+            {item.title}
+          </span>
+        </Link>
+        {item.children && (
+          <div className="ml-3 md:ml-4 mt-1 space-y-1">
+            {item.children.map((sub, j) => (
+              <Link href={sub.href} key={j}>
+                <span className="block text-gray-600 dark:text-gray-400 hover:underline">
+                  {sub.title}
+                </span>
+              </Link>
+            ))}
           </div>
-        ))}
-      </nav>
-    </aside>
+        )}
+      </div>
+    ))}
+  </nav>
+</aside>
+
+  
   );
 }
