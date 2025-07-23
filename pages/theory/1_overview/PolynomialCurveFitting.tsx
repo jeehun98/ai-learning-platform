@@ -3,7 +3,7 @@ import TheoryLayout from "@/components/TheoryLayout";
 import PolynomialGraph from "@/components/1_1/PolynomialGraph";
 import 'katex/dist/katex.min.css';
 import { BlockMath } from 'react-katex';
-import { polynomialContent } from "@/data/theory/polynomialCurveFittingContent";
+import { polynomialContent } from "@/data/theory/1_overview/polynomialCurveFittingContent";
 
 
 

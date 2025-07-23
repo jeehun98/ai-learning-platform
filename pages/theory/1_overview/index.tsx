@@ -1,6 +1,6 @@
 import Head from "next/head";
 import TheoryLayout from "@/components/TheoryLayout";
-import { overviewContent } from "../../../data/theory/overviewContent";
+import { overviewContent } from "../../../data/theory/1_overview/overviewContent";
 
 export default function OverviewPage() {
   return (

@@ -7,6 +7,7 @@ const sidebarItems = [
     children: [
       { title : "1. 소개", href: "/theory/1_overview" },
       { title : "1.1 다항식 곡선 피팅", href: "/theory/1_overview/PolynomialCurveFitting" },
+      { title : "1.2 확률론", href: "/theory/1_overview/probability" },
     ],
   },
   {
