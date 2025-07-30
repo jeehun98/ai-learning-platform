@@ -2,13 +2,7 @@ import Head from "next/head";
 import TheoryLayout from "@/components/TheoryLayout";
 import PolynomialGraph from "@/components/1_1/PolynomialGraph";
 import 'katex/dist/katex.min.css';
-<<<<<<< HEAD
-import { BlockMath } from 'react-katex';
 import { polynomialContent } from "@/data/theory/1_overview/polynomialCurveFittingContent";
-=======
-import { polynomialContent } from "@/data/theory/polynomialCurveFittingContent";
->>>>>>> acc70618727b1c34fb700fe92fd8ddcf6108fed2
-
 
 
 export default function PolynomialFittingPage() {

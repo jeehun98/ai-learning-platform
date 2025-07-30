@@ -1,4 +1,4 @@
-// pages/index.tsx
+// pages/theory/index.tsx
 import RoundedButton from "@/components/RoundedButton";
 import Head from "next/head";
 import TheoryLayout from "@/components/TheoryLayout";

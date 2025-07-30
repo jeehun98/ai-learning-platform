@@ -1,7 +1,6 @@
 import Head from "next/head";
 import TheoryLayout from "@/components/TheoryLayout";
 import 'katex/dist/katex.min.css';
-import { BlockMath } from 'react-katex';
 import { probabilityTheoryContent } from "@/data/theory/1_overview/probabilityTheoryContent";
 
 export default function ProbabilityTheoryPage() {
@@ -33,11 +32,6 @@ export default function ProbabilityTheoryPage() {
                 </ul>
               )}
 
-              {sec.latex && (
-                <div className="my-4">
-                  <BlockMath math={sec.latex} />
-                </div>
-              )}
             </div>
           ))}
         </section>

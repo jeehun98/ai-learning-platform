@@ -12,15 +12,14 @@ export default function Home() {
         인공지능의 이론과 계산 과정을 시각적으로 탐색하고, 직접 실험할 수 있도록 설계된 플랫폼입니다.
       </p>
       <div className="grid gap-4">
+        <RoundedButton href="/framework" color="bg-blue-100 text-blue-800">
+          📊 프레임 워크 구조 확인하기
+        </RoundedButton>
+        
         <RoundedButton href="/theory" color="bg-yellow-100 text-yellow-800">
           📚 머신러닝 이론 학습하기
         </RoundedButton>
-        <RoundedButton href="/graph-visualizer" color="bg-blue-100 text-blue-800">
-          📊 계산 그래프 시각화
-        </RoundedButton>
-        <RoundedButton href="/activations" color="bg-green-100 text-green-800">
-          🌱 활성화 함수 작동 원리
-        </RoundedButton>
+        
       </div>
     </main>
   );

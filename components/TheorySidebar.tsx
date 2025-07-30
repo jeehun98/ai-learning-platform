@@ -37,6 +37,8 @@ const sidebarItems = [
     ],
   },
   {
+
+    
     title: "5. 실전 팁",
     href: "/theory/5_tips",
   },
